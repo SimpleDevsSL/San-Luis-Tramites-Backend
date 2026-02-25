@@ -9,10 +9,10 @@
 ## Especificación de Entidades
 
 ### Tramites (Trámites)
-Tramites = {id, title, titulo_abreviado, description, fecha_ultima_actualizacion, definicion, destinatarios, consejo_local, fuentes_informacion}
+Tramites = {id, titulo, titulo_abreviado, description, fecha_ultima_actualizacion, definicion, destinatarios, consejo_local, fuentes_informacion}
 * id: Integer (identificador único del trámite)
 <!-- * slug: String (identificador corto y único, ej. "cipe") -->
-* title: String (título completo del trámite, ej. "CIPE (DNI Provincial)")
+* titulo: String (título completo del trámite, ej. "CIPE (DNI Provincial)")
 * titulo_abreviado: String (título abreviado, ej. "CIPE")
 * description: String (descripción detallada del trámite)
 * fecha_ultima_actualizacion: String (fecha de última actualización, ej. "Enero 2026")
