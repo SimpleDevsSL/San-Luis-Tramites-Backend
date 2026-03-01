@@ -11,6 +11,7 @@ from schemas import (
     TramiteRequisitoAsociacion
 )
 from typing import List
+from fastapi.middleware.cors import CORSMiddleware
 
 # Crear las tablas en la BD (si no existen)
 Base.metadata.create_all(bind=engine)
@@ -19,6 +20,20 @@ app = FastAPI(
     title="San Luis Trámites API",
     description="API para gestionar trámites de la provincia de San Luis",
     version="1.0.0"
+)
+
+# Permitir orígenes de desarrollo (ajustar puertos según tu frontend)
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      # usar ["*"] solo en desarrollo si hace falta
+    allow_credentials=True,     # True si envías cookies/credentials
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # ============================================================================
